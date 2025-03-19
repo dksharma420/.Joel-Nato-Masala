@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary-color: #031f1f;
+    --secondary-color: #fff;
+    --accent-color: #ff5959;
+    --highlight-color: #fff570;
+    --btn-bg: #4caf50;
+    --btn-bg-hover: #3e8e41;
+    --footer-bg: #333;
+  }
+  
+  @font-face {
+    font-family: 'HYWenHei-85W';
+    src: url('/static/genshin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'HYWenHei-85W', Arial, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+  }
+  
+  .swiper-container {
+    width: calc(100% - 160px);
+    height: 91vh;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .swiper-wrapper {
+    width: 400%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .swiper-slide {
+    width: 25%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav img {
+    width: 50px;
+    height: auto;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    font-size: 16px;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  nav ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+  
+  .signin-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .hero {
+    background: url('/static/bg.jpg') center/cover no-repeat;
+    color: var(--secondary-color);
+    padding: 100px 20px;
+    text-align: center;
+    margin: 10px 80px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero h1,
+  .hero p {
+    margin-bottom: 30px;
+    background: linear-gradient(to right, var(--accent-color), var(--highlight-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .highlights {
+    text-align: center;
+    margin: 30px 80px;
+  }
+  
+  .flip-card {
+    width: 290px;
+    height: 360px;
+    perspective: 1000px;
+    display: inline-block;
+    margin-left: 85px;
+    margin-right: 85px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 150%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+  }
+  
+  .flip-card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    color: var(--primary-color);
+    padding: 20px;
+  }
+  
+  .flip-card-front img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .flip-card-front h4 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .flip-card-back {
+    background-color: #bef3ff;
+    color: var(--primary-color);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .flip-card-back h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .flip-card-back ul {
+    list-style: none;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .flip-card-back ul li {
+    margin-bottom: 5px;
+  }
+  
+  .btn-buy {
+    background-color: var(--btn-bg);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn-buy:hover {
+    background-color: var(--btn-bg-hover);
+  }
+  
+  
+  footer {
+    background-color: var(--footer-bg);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+  
+  .signin-container {
+    width: 320px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 80px auto;
+  }
+  
+  .signin-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+  }
+  
+  .signin-container input[type="text"],
+  .signin-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .signin-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--btn-bg);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .signin-container button:hover {
+    background-color: var(--btn-bg-hover);
+  }
+  
+  .extra-links {
+    text-align: center;
+    margin-top: 12px;
+  }
+  
+  .extra-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  footer {
+    margin-bottom: 0;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .swiper-container {
+      height: 300px;
+    }
+    .swiper-slide {
+      width: 50%;
+    }
+    nav ul li {
+      margin-right: 5px;
+    }
+    .signin-button {
+      padding: 8px 16px;
+    }
+    .hero {
+      padding: 50px 10px;
+      margin: 10px;
+    }
+    .hero h1,
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .flip-card {
+      width: 250px;
+      height: 300px;
+      margin: 20px;
+    }
+    .flip-card-inner {
+      width: 120%;
+    }
+    .flip-card-front h4 {
+      font-size: 1.2rem;
+    }
+    .flip-card-back h4 {
+      font-size: 1rem;
+    }
+    .flip-card-back ul {
+      font-size: 0.8rem;
+    }
+    .btn-buy {
+      font-size: 0.9rem;
+    }
+    footer {
+      font-size: 12px;
+    }
+  }

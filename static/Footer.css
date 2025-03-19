@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'HYWenHei-85W';
+    src: url('/static/genshin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.footer {
+    background-color: #2F1B1B;
+    color: #F4E1D2;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1em;
+    font-family: 'HYWenHei-85W', Arial, sans-serif;
+    width: 100%;
+}
