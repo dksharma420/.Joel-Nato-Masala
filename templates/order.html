@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Now - Joel Nato</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/order.css">
+    <link rel="stylesheet" href="/static/footer.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <img src="/static/logo.jpg" alt="Joel Nato Logo">
+            <ul>
+                <li><a href="/templates/index.html">Home</a></li>
+                <li><a href="/templates/about.html">About Us</a></li>
+                <li><a href="/templates/products.html">Order Tracking</a></li>
+                <li><a href="/templates/contact.html">Contact Us</a></li>
+                <a href="/templates/signin.html" class="signin-button">Sign In</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="order-form">
+            <h1>Place Your Order</h1>
+            <form id="orderForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="product">Select Product:</label>
+                <select id="product" name="product">
+                    <option value="jerra">Jerra Powder</option>
+                    <option value="malwani">Malwani Masala</option>
+                    <option value="kali_mirch">Kali Mirch</option>
+                    <option value="dhaniya">Dhaniya Powder</option>
+                    <option value="khada_garam">Khada Garam Masala</option>
+                    <option value="premium_spice">Premium Spice Masala</option>
+                </select>
+                
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+                
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" required></textarea>
+                
+                <button type="submit" class="btn-submit">Submit Order</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Masala Magic. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+            let name = document.getElementById("name").value;
+            let product = document.getElementById("product").value;
+            let quantity = document.getElementById("quantity").value;
+            let address = document.getElementById("address").value;
+            let phone = "9324640839"; // Replace with your WhatsApp number
+
+            let message = `Hello, my name is ${name}. I want to order: ${quantity} x ${product}. Delivery Address: ${address}`;
+            let whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+            window.location.href = whatsappURL;
+        });
+    </script>
+
+</body>
+</html>
